@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "MusicApp",
+    "description": "A modern music streaming application built with Kotlin and Jetpack Compose. Features include music browsing, playlist management, and smooth UI transitions.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
+    "image": "🎵",
+    "github": "https://github.com/x0t68/MusicApp",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Little Lemon",
+    "description": "A restaurant ordering application showcasing modern Android development practices. Implements food browsing, cart management, and order tracking with MVVM architecture.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
+    "image": "🍋",
+    "github": "https://github.com/x0t68/Little-lemon",
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "CarsShop",
+    "description": "An e-commerce platform for car accessories and parts. Features product catalog, shopping cart, and checkout functionality with a responsive design.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
+    "image": "🚗",
+    "github": "https://github.com/x0t68/CarsShop",
+    "status": "Active"
+  },
+  {
+    "id": 4,
+    "name": "TicketBookingApp",
+    "description": "A comprehensive ticket booking system for events and movies. Includes event search, seat selection, payment integration, and booking management features.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
+    "image": "🎫",
+    "github": "https://github.com/x0t68/TicketBookingApp",
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "AppointmentApp",
+    "description": "A professional appointment scheduling application. Allows users to book appointments, manage schedules, and receive notifications with a clean and intuitive interface.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
+    "image": "📅",
+    "github": "https://github.com/x0t68/AppointmentApp",
+    "status": "Active"
+  }
+]
