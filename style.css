@@ -68,6 +68,11 @@ h3 {
     color: var(--text-primary);
 }
 
+h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
 p {
     margin-bottom: 1rem;
     color: var(--text-secondary);
@@ -211,6 +216,7 @@ a:hover {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 2rem;
+    line-height: 1.8;
 }
 
 .hero-cta {
@@ -223,6 +229,16 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+    animation: float 3s ease-in-out infinite;
 }
 
 .code-icon {
@@ -260,6 +276,7 @@ a:hover {
         order: -1;
     }
 
+    .profile-image,
     .code-icon {
         width: 200px;
         height: 200px;
@@ -331,6 +348,10 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
+.about-text strong {
+    color: var(--primary-light);
+}
+
 .skills h3 {
     margin-bottom: 1.5rem;
     color: var(--primary-color);
@@ -369,11 +390,44 @@ a:hover {
 }
 
 /* ============================================
+   SKILLS SECTION
+   ============================================ */
+
+.skills-section {
+    padding: 80px 0;
+    background-color: var(--background);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.skill-category h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-light);
+}
+
+.skill-category .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
    PROJECTS SECTION
    ============================================ */
 
 .projects {
     padding: 80px 0;
+    background-color: var(--surface);
 }
 
 .projects-grid {
@@ -383,7 +437,7 @@ a:hover {
 }
 
 .project-card {
-    background-color: var(--surface);
+    background-color: var(--background);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
@@ -424,6 +478,8 @@ a:hover {
     color: var(--text-secondary);
     margin-bottom: 1rem;
     flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .project-tech {
@@ -468,6 +524,72 @@ a:hover {
 
 @media (max-width: 768px) {
     .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   CERTIFICATIONS SECTION
+   ============================================ */
+
+.certifications {
+    padding: 80px 0;
+    background-color: var(--background);
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.cert-item {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cert-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.2);
+}
+
+.cert-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cert-item h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.cert-item a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cert-item a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .certifications-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -600,6 +722,29 @@ a:hover {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
 }
 
 .social-links {
