@@ -1,47 +1,77 @@
 [
   {
     "id": 1,
-    "name": "MusicApp",
-    "description": "A modern music streaming application built with Kotlin and Jetpack Compose. Features include music browsing, playlist management, and smooth UI transitions.",
-    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
-    "image": "🎵",
-    "github": "https://github.com/x0t68/MusicApp",
+    "name": "Flight Ticket Booking App",
+    "description": "A full flight-booking flow end-to-end with passenger selection, flight class and date pickers, dynamic search, seat selection, and QR/barcode digital ticket generation using Kotlin and Jetpack Compose with MVVM architecture.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Firebase Realtime Database", "Kotlinx Serialization"],
+    "image": "🎫",
+    "github": "https://github.com/x0t68/TicketBookingApp",
+    "highlights": [
+      "Architected full flight-booking flow end-to-end",
+      "Fixed critical data-loading failures in search results",
+      "Engineered real-time interactive seat-selection map",
+      "Resolved layout-constraint and accessibility issues"
+    ],
     "status": "Active"
   },
   {
     "id": 2,
-    "name": "Little Lemon",
-    "description": "A restaurant ordering application showcasing modern Android development practices. Implements food browsing, cart management, and order tracking with MVVM architecture.",
-    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
-    "image": "🍋",
-    "github": "https://github.com/x0t68/Little-lemon",
+    "name": "Music Player App",
+    "description": "A local audio player integrating ExoPlayer for media playback control, with runtime permission handling for scoped storage access. Features MediaStore-based audio scanning and Compose-based UI.",
+    "technologies": ["Kotlin", "Jetpack Compose", "ExoPlayer", "MediaStore", "Android SDK"],
+    "image": "🎵",
+    "github": "https://github.com/x0t68/MusicApp",
+    "highlights": [
+      "Built local audio player with ExoPlayer integration",
+      "Implemented runtime permission handling for scoped storage",
+      "Designed favorites system with Compose UI",
+      "MediaStore-based dynamic audio scanning"
+    ],
     "status": "Active"
   },
   {
     "id": 3,
-    "name": "CarsShop",
-    "description": "An e-commerce platform for car accessories and parts. Features product catalog, shopping cart, and checkout functionality with a responsive design.",
-    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
-    "image": "🚗",
-    "github": "https://github.com/x0t68/CarsShop",
+    "name": "Restaurant App (Little Lemon)",
+    "description": "Meta Android Developer Capstone project implementing login validation, email verification, REST API integration, and local Room database caching for offline access to menu data.",
+    "technologies": ["Kotlin", "Jetpack Compose", "Ktor", "Room Database", "REST APIs"],
+    "image": "🍋",
+    "github": "https://github.com/x0t68/Little-lemon",
+    "highlights": [
+      "Implemented login validation and email verification",
+      "Integrated REST APIs for remote menu data",
+      "Solved offline-access with Room database caching",
+      "Meta Capstone project - production-grade implementation"
+    ],
     "status": "Active"
   },
   {
     "id": 4,
-    "name": "TicketBookingApp",
-    "description": "A comprehensive ticket booking system for events and movies. Includes event search, seat selection, payment integration, and booking management features.",
-    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
-    "image": "🎫",
-    "github": "https://github.com/x0t68/TicketBookingApp",
+    "name": "Appointment Booking App",
+    "description": "A professional appointment scheduling application with searchable doctor-discovery flow, detailed provider profiles, experience/pricing display, and bottom navigation using MVVM architecture.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "ViewModel", "Android SDK"],
+    "image": "📅",
+    "github": "https://github.com/x0t68/AppointmentApp",
+    "highlights": [
+      "Developed searchable doctor-discovery flow",
+      "Built detailed provider profiles with experience/pricing",
+      "Applied MVVM to separate UI state from business logic",
+      "Responsive UI across multiple screens"
+    ],
     "status": "Active"
   },
   {
     "id": 5,
-    "name": "AppointmentApp",
-    "description": "A professional appointment scheduling application. Allows users to book appointments, manage schedules, and receive notifications with a clean and intuitive interface.",
-    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
-    "image": "📅",
-    "github": "https://github.com/x0t68/AppointmentApp",
+    "name": "Car Store App",
+    "description": "An e-commerce-style product catalog and detail-view flow with search functionality. Designed to demonstrate production-style Android UI/UX conventions using MVVM architecture.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android SDK"],
+    "image": "🚗",
+    "github": "https://github.com/x0t68/CarsShop",
+    "highlights": [
+      "Designed e-commerce product catalog",
+      "Implemented search and filtering",
+      "Applied MVVM for consistent state management",
+      "Production-style UI/UX implementation"
+    ],
     "status": "Active"
   }
 ]
