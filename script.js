@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProjects();
     setupScrollAnimations();
     setupSmoothScroll();
+    updateNavbarActiveState();
 });
 
 async function loadProjects() {
@@ -44,6 +45,12 @@ function createProjectCard(project) {
         .map(tech => `<span class="tech-badge">${tech}</span>`)
         .join('');
 
+    const highlightsList = project.highlights
+        ? `<ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+            ${project.highlights.map(h => `<li style="margin-bottom: 0.5rem;">${h}</li>`).join('')}
+           </ul>`
+        : '';
+
     card.innerHTML = `
         <div class="project-header">
             <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">${project.image}</div>
@@ -51,13 +58,14 @@ function createProjectCard(project) {
         </div>
         <div class="project-body">
             <p class="project-description">${project.description}</p>
+            ${highlightsList}
             <div class="project-tech">
                 ${techTags}
             </div>
             <div class="project-links">
                 <a href="${project.github}" target="_blank" class="project-link">
                     <i class="fab fa-github"></i>
-                    <span>GitHub</span>
+                    <span>View Code</span>
                 </a>
             </div>
         </div>
@@ -96,6 +104,14 @@ function setupScrollAnimations() {
         observer.observe(heading);
     });
 
+    // Observe certification items
+    setTimeout(() => {
+        document.querySelectorAll('.cert-item').forEach(item => {
+            item.classList.add('animate-on-scroll');
+            observer.observe(item);
+        });
+    }, 100);
+
     // Observe project cards
     setTimeout(() => {
         document.querySelectorAll('.project-card').forEach(card => {
@@ -104,6 +120,14 @@ function setupScrollAnimations() {
             }
         });
     }, 500);
+
+    // Observe education items
+    setTimeout(() => {
+        document.querySelectorAll('.education-item').forEach(item => {
+            item.classList.add('animate-on-scroll');
+            observer.observe(item);
+        });
+    }, 200);
 }
 
 /* ============================================
@@ -131,6 +155,7 @@ function setupSmoothScroll() {
 
 window.addEventListener('scroll', function() {
     updateNavbarActiveState();
+    setupScrollAnimations();
 });
 
 function updateNavbarActiveState() {
@@ -244,6 +269,9 @@ window.addEventListener('load', function() {
     // Add fade-in animation to main content
     const mainContent = document.querySelector('main') || document.body;
     mainContent.style.animation = 'fadeIn 0.6s ease';
+
+    // Trigger animations for elements already in view
+    setupScrollAnimations();
 });
 
 /* ============================================
@@ -327,4 +355,47 @@ function trackPageView() {
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initLazyLoadImages();
+    initContactForm();
+});
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+// Add keyboard navigation support
+document.addEventListener('keydown', function(e) {
+    // Home key - scroll to top
+    if (e.key === 'Home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // End key - scroll to bottom
+    if (e.key === 'End') {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+});
+
+/* ============================================
+   INTERSECTION OBSERVER FOR ELEMENTS
+   ============================================ */
+
+// Create a more efficient intersection observer
+const observerConfig = {
+    threshold: [0.1, 0.5],
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const elementObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+        }
+    });
+}, observerConfig);
+
+// Observe elements on initial load
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        elementObserver.observe(el);
+    });
 });
