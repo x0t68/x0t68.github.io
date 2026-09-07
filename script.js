@@ -5,15 +5,105 @@ document.addEventListener('DOMContentLoaded', function() {
     updateNavbarActiveState();
 });
 
+/* ============================================
+   FALLBACK PROJECT DATA
+   ------------------------------------------------
+   fetch('projects.json') only works when the site is
+   served over http(s) — GitHub Pages, a local dev server,
+   etc. Opening index.html directly from disk (file://)
+   blocks that fetch due to the browser's CORS rules, which
+   used to show "Failed to load projects". This embedded
+   copy is used automatically whenever the fetch fails, so
+   the page always works. Keep this in sync with
+   projects.json when you add/edit projects.
+   ============================================ */
+const FALLBACK_PROJECTS = [
+  {
+    "id": 1,
+    "name": "Flight Ticket Booking App",
+    "description": "Architected a full flight-booking flow end-to-end with dynamic search, seat selection, and digital ticket generation.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Firebase", "Kotlinx Serialization"],
+    "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788737987/image_2026-09-07_02-36-50_rweiak.png",
+    "github": "https://github.com/x0t68/TicketBookingApp",
+    "features": [
+      "End-to-end flight-booking flow: passenger selection, flight class, and date pickers.",
+      "Engineered a real-time interactive seat-selection map with observable states.",
+      "Resolved complex data-loading and layout-constraint bugs for a flawless UI.",
+      "QR/barcode digital ticket generation."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Music Player App",
+    "description": "A high-performance local music player providing a seamless audio experience with a focus on speed, design, and usability.",
+    "technologies": ["Kotlin", "Jetpack Compose", "ExoPlayer", "Room", "Coroutines"],
+    "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788737989/image_2026-09-07_02-37-08_gqorlm.png",
+    "github": "https://github.com/x0t68/MusicApp",
+    "features": [
+      "Media3 ExoPlayer Integration: High-quality audio playback and media session support.",
+      "Background Playback: Full notification controls even when locked.",
+      "Smart Categorization & Offline Library: Scans Songs, Albums, and Folders dynamically.",
+      "Interactive Waveform Visualizer & Material 3 UI with dynamic colors."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "Restaurant App (Little Lemon)",
+    "description": "A sleek Mediterranean restaurant application featuring remote data fetching, offline-first persistence, and dynamic UI.",
+    "technologies": ["Kotlin", "Jetpack Compose", "Ktor", "Room Database", "Serialization"],
+    "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788737988/image_2026-09-07_02-36-42_iseygi.png",
+    "github": "https://github.com/x0t68/Little-lemon",
+    "features": [
+      "Dynamic Menu Integration: Real-time fetching of structured menus via Ktor.",
+      "Offline-First Architecture: Room Database caching for uninterrupted functionality.",
+      "Smart Search & Categorization: Real-time filtering and horizontal category tabs.",
+      "Meta Android Developer Capstone project demonstrating production-grade architecture."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": 4,
+    "name": "Appointment Booking App",
+    "description": "A professional appointment scheduling application with searchable doctor-discovery flow and detailed provider profiles.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Android SDK"],
+    "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788737988/image_2026-09-07_02-36-58_ps5c7l.png",
+    "github": "https://github.com/x0t68/AppointmentApp",
+    "features": [
+      "Searchable doctor-discovery flow.",
+      "Detailed provider profiles with experience/pricing display.",
+      "MVVM architecture separating UI state from business logic.",
+      "Responsive UI across multiple screens (splash, search, profile)."
+    ],
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "Car Store App",
+    "description": "An Android e-commerce application for browsing and viewing cars, demonstrating clean architecture and modern practices.",
+    "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Firebase", "Cloudinary"],
+    "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788737987/image_2026-09-07_02-36-50_rweiak.png",
+    "github": "https://github.com/x0t68/CarsShop",
+    "features": [
+      "Authentication: Firebase-based login & registration.",
+      "Cloudinary Integration: Dynamically store & fetch car images.",
+      "Car Details Screen: Shows specifications and capabilities of each car.",
+      "Modern Material 3 UI built entirely with Compose."
+    ],
+    "status": "Active"
+  }
+];
+
 async function loadProjects() {
     try {
         const response = await fetch('projects.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const projects = await response.json();
         displayProjects(projects);
     } catch (error) {
-        console.error('Error loading projects:', error);
-        document.getElementById('projectsGrid').innerHTML = 
-            '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);">Failed to load projects. Please refresh the page.</p>';
+        console.warn('Could not fetch projects.json (expected when opening the file directly instead of via a server). Using built-in project data instead.', error);
+        displayProjects(FALLBACK_PROJECTS);
     }
 }
 
