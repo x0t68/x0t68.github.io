@@ -656,6 +656,7 @@ a:hover {
 }
 
 .cert-item {
+    position: relative;
     background-color: var(--surface);
     padding: 2rem;
     border-radius: 12px;
@@ -665,6 +666,27 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.cert-provider-logo {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
 }
 
 .cert-item:hover {
