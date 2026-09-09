@@ -1,10 +1,48 @@
 document.addEventListener('DOMContentLoaded', function() {
+    setupThemeToggle();
     loadProjects();
     setupScrollAnimations();
     setupSmoothScroll();
     setupMobileNav();
     updateNavbarActiveState();
 });
+
+/* ============================================
+   LIGHT / DARK THEME TOGGLE
+   ------------------------------------------------
+   Defaults to the visitor's OS preference (prefers-color-scheme)
+   on first visit, then remembers whatever they pick in
+   localStorage so it persists across reloads.
+   ============================================ */
+function setupThemeToggle() {
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const stored = localStorage.getItem('theme');
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const initial = stored || (prefersLight ? 'light' : 'dark');
+
+    applyTheme(initial);
+
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        const next = current === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+        localStorage.setItem('theme', next);
+    });
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            root.setAttribute('data-theme', 'light');
+        } else {
+            root.removeAttribute('data-theme');
+        }
+        if (toggle) {
+            toggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+        }
+    }
+}
 
 /* ============================================
    MOBILE NAV (hamburger menu)
