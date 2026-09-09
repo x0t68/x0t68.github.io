@@ -2,8 +2,33 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProjects();
     setupScrollAnimations();
     setupSmoothScroll();
+    setupMobileNav();
     updateNavbarActiveState();
 });
+
+/* ============================================
+   MOBILE NAV (hamburger menu)
+   ============================================ */
+function setupMobileNav() {
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+
+    toggle.addEventListener('click', () => {
+        const isOpen = links.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close the menu after tapping a link
+    links.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            links.classList.remove('open');
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
 
 /* ============================================
    FALLBACK PROJECT DATA
@@ -83,7 +108,7 @@ const FALLBACK_PROJECTS = [
     "name": "Car Store App",
     "description": "An Android e-commerce application for browsing and viewing cars, demonstrating clean architecture and modern practices.",
     "technologies": ["Kotlin", "Jetpack Compose", "MVVM", "Firebase", "Cloudinary"],
-    "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788737987/image_2026-09-07_02-36-50_rweiak.png",
+    "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788970776/image_2026-09-09_19-18-29_iatdg4.png",
     "github": "https://github.com/x0t68/CarsShop",
     "features": [
       "Authentication: Firebase-based login & registration.",
