@@ -109,6 +109,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 20px;
+    position: relative;
 }
 
 .nav-brand {
@@ -156,10 +157,73 @@ a:hover {
     width: 100%;
 }
 
+/* Hamburger button — hidden on desktop, shown on mobile */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
     .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--surface);
+        border-bottom: 1px solid var(--border-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-links.open {
+        max-height: 300px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem 20px;
+        border-top: 1px solid var(--border-color);
     }
 
     h1 {
@@ -758,4 +822,132 @@ a:hover {
 .animate-on-scroll.in-view {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ============================================
+   MOBILE REFINEMENTS (tablets & phones)
+   ============================================ */
+
+@media (max-width: 768px) {
+    section {
+        padding: 50px 0;
+    }
+
+    .about, .skills-section, .projects, .certifications, .education, .contact {
+        padding: 50px 0;
+    }
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .about-text p, .hero-description {
+        font-size: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skills-container {
+        gap: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cert-item {
+        padding: 1.5rem;
+    }
+
+    .education-timeline::before {
+        left: 20px;
+    }
+
+    .education-item {
+        grid-template-columns: 40px 1fr;
+        gap: 1rem;
+    }
+
+    .education-marker {
+        width: 40px;
+        height: 40px;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+    }
+
+    .modal-body {
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .modal-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .contact-info {
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .social-link {
+        justify-content: center;
+        width: 100%;
+    }
 }
