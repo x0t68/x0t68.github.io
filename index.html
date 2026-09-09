@@ -18,13 +18,13 @@
     <meta property="og:url" content="https://x0t68.github.io/">
     <meta property="og:title" content="Taha Munla Ali - Android Developer">
     <meta property="og:description" content="Android developer specializing in Kotlin and Jetpack Compose, with hands-on experience in MVVM architecture and Firebase integration.">
-    <meta property="og:image" content="https://res.cloudinary.com/deirc2clp/image/upload/v1788988723/photo_2026-09-06_14-25-15_kvh31n.jpg">
+    <meta property="og:image" content="https://res.cloudinary.com/deirc2clp/image/upload/v1788970799/photo_2026-09-06_14-25-15_kvh31n.png">
 
     <!-- Link preview (X/Twitter) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Taha Munla Ali - Android Developer">
     <meta name="twitter:description" content="Android developer specializing in Kotlin and Jetpack Compose, with hands-on experience in MVVM architecture and Firebase integration.">
-    <meta name="twitter:image" content="https://res.cloudinary.com/deirc2clp/image/upload/v1788988723/photo_2026-09-06_14-25-15_kvh31n.jpg">
+    <meta name="twitter:image" content="https://res.cloudinary.com/deirc2clp/image/upload/v1788970799/photo_2026-09-06_14-25-15_kvh31n.png">
 
     <!-- Structured data so Google can show a rich result for your name -->
     <script type="application/ld+json">
@@ -35,7 +35,7 @@
       "alternateName": "طه منلا علي",
       "jobTitle": "Android Developer",
       "description": "Android Developer specializing in Kotlin and Jetpack Compose, Meta Certified Android Developer.",
-      "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788988723/photo_2026-09-06_14-25-15_kvh31n.jpg",
+      "image": "https://res.cloudinary.com/deirc2clp/image/upload/v1788970799/photo_2026-09-06_14-25-15_kvh31n.png",
       "url": "https://x0t68.github.io/",
       "email": "mailto:taha.x2t68@gmail.com",
       "knowsAbout": ["Android Development", "Kotlin", "Jetpack Compose", "MVVM Architecture", "Firebase", "React Native"],
@@ -52,24 +52,43 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Apply saved/preferred theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function() {
+            var stored = localStorage.getItem('theme');
+            var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+            var theme = stored || (prefersLight ? 'light' : 'dark');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">Taha Munla Ali</div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -89,7 +108,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://res.cloudinary.com/deirc2clp/image/upload/v1788988723/photo_2026-09-06_14-25-15_kvh31n.jpg" alt="Taha Munla Ali" class="profile-image">
+                <img src="https://res.cloudinary.com/deirc2clp/image/upload/v1788970799/photo_2026-09-06_14-25-15_kvh31n.png" alt="Taha Munla Ali" class="profile-image">
             </div>
         </div>
     </section>
@@ -189,49 +208,140 @@
             <div class="certifications-grid">
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Meta Android Developer Professional Certificate</h4>
+                    <div class="cert-skills">
+                        <span class="tech-badge">Persona (User Experience)</span>
+                        <span class="tech-badge">RESTful API</span>
+                        <span class="tech-badge">Version Control</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">User Research</span>
+                        <span class="tech-badge">Mobile Development</span>
+                        <span class="tech-badge">Usability Testing</span>
+                        <span class="tech-badge">Kotlin</span>
+                        <span class="tech-badge">Android Studio</span>
+                        <span class="tech-badge">Git</span>
+                        <span class="tech-badge">Interaction Design</span>
+                        <span class="tech-badge">Code Reusability</span>
+                    </div>
                     <a href="https://www.credly.com/badges/523cc79e-6501-4f37-acab-85f55ee57a00/public_url" target="_blank">View Credential</a>
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Meta Android UI Development Specialization</h4>
+                    <div class="cert-skills">
+                        <span class="tech-badge">Unit Testing</span>
+                        <span class="tech-badge">Android OS</span>
+                        <span class="tech-badge">Mobile Development Tools</span>
+                        <span class="tech-badge">User Interface (UI)</span>
+                        <span class="tech-badge">Code Reusability</span>
+                        <span class="tech-badge">Wireframing</span>
+                        <span class="tech-badge">OOP</span>
+                        <span class="tech-badge">Android Studio</span>
+                        <span class="tech-badge">UI Components</span>
+                        <span class="tech-badge">Cross Platform Development</span>
+                        <span class="tech-badge">Android Development</span>
+                    </div>
                     <a href="https://coursera.org/share/a893e85dfa6d35d675a23bce7d95d684" target="_blank">View Credential</a>
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Advanced Programming with Kotlin</h4>
+                    <div class="cert-skills">
+                        <span class="tech-badge">Android Development</span>
+                        <span class="tech-badge">TDD</span>
+                        <span class="tech-badge">Android Studio</span>
+                        <span class="tech-badge">Kotlin</span>
+                        <span class="tech-badge">Programming Principles</span>
+                        <span class="tech-badge">Software Testing</span>
+                        <span class="tech-badge">OOP</span>
+                        <span class="tech-badge">Unit Testing</span>
+                        <span class="tech-badge">Application Development</span>
+                        <span class="tech-badge">Mobile Development</span>
+                        <span class="tech-badge">Functional Design</span>
+                    </div>
                     <a href="https://www.coursera.org/account/accomplishments/records/QISK4HCJ4QG6" target="_blank">View Credential</a>
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Android App Capstone</h4>
+                    <div class="cert-skills">
+                        <span class="tech-badge">Android Jetpack</span>
+                        <span class="tech-badge">Application Development</span>
+                        <span class="tech-badge">UI/UX Design</span>
+                        <span class="tech-badge">Kotlin</span>
+                        <span class="tech-badge">Data Access</span>
+                        <span class="tech-badge">Git</span>
+                        <span class="tech-badge">Application Design</span>
+                        <span class="tech-badge">Mobile Development</span>
+                        <span class="tech-badge">Android Studio</span>
+                        <span class="tech-badge">Android Development</span>
+                    </div>
                     <a href="https://coursera.org/share/992b18d2b242aded9610d235a0969be0" target="_blank">View Credential</a>
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Principles of UI/UX Design</h4>
+                    <div class="cert-skills">
+                        <span class="tech-badge">User Experience Design</span>
+                        <span class="tech-badge">UI/UX Research</span>
+                        <span class="tech-badge">Web Design</span>
+                        <span class="tech-badge">Figma</span>
+                        <span class="tech-badge">Persona (User Experience)</span>
+                        <span class="tech-badge">Design Research</span>
+                        <span class="tech-badge">Wireframing</span>
+                        <span class="tech-badge">User Research</span>
+                        <span class="tech-badge">Layout Design</span>
+                        <span class="tech-badge">Front-End Web Development</span>
+                        <span class="tech-badge">Usability Testing</span>
+                    </div>
                     <a href="https://www.coursera.org/account/accomplishments/records/2B3M9XWZEPFp" target="_blank">View Credential</a>
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>React Native by Meta</h4>
+                    <div class="cert-skills">
+                        <span class="tech-badge">Application Development</span>
+                        <span class="tech-badge">Mobile Development</span>
+                        <span class="tech-badge">UI Components</span>
+                        <span class="tech-badge">Interactive Design</span>
+                        <span class="tech-badge">Mobile Development Tools</span>
+                        <span class="tech-badge">User Interface (UI)</span>
+                        <span class="tech-badge">Front-End Web Development</span>
+                        <span class="tech-badge">Development Environment</span>
+                        <span class="tech-badge">React.js</span>
+                        <span class="tech-badge">Cross Platform Development</span>
+                    </div>
                     <a href="https://www.coursera.org/account/accomplishments/verify/KHKW7ERAWRAU" target="_blank">View Credential</a>
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>React Basics</h4>
+                    <div class="cert-skills">
+                        <span class="tech-badge">Dataflow</span>
+                        <span class="tech-badge">Code Reusability</span>
+                        <span class="tech-badge">React.js</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Webpack</span>
+                        <span class="tech-badge">UI Components</span>
+                        <span class="tech-badge">Front-End Web Development</span>
+                        <span class="tech-badge">Development Environment</span>
+                        <span class="tech-badge">Application Development</span>
+                        <span class="tech-badge">Event-Driven Programming</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">HTML</span>
+                    </div>
                     <a href="https://coursera.org/share/6092e2006797fa004a8a1d9e6ce256b3" target="_blank">View Credential</a>
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Mobile Development and JavaScript</h4>
                     <div class="cert-skills">
                         <span class="tech-badge">Jest</span>
@@ -246,7 +356,7 @@
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Working with Data in Android</h4>
                     <div class="cert-skills">
                         <span class="tech-badge">RESTful API</span>
@@ -260,7 +370,7 @@
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Coding Interview Preparation</h4>
                     <div class="cert-skills">
                         <span class="tech-badge">Algorithms</span>
@@ -273,7 +383,7 @@
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Create the User Interface in Android Studio</h4>
                     <div class="cert-skills">
                         <span class="tech-badge">XML</span>
@@ -286,7 +396,7 @@
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Programming Fundamentals in Kotlin</h4>
                     <div class="cert-skills">
                         <span class="tech-badge">Data Structures</span>
@@ -298,7 +408,7 @@
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Version Control</h4>
                     <div class="cert-skills">
                         <span class="tech-badge">Git</span>
@@ -310,7 +420,7 @@
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788972278/a68370c9-0fa4-4eee-8d64-0af2d94ad068.png" alt="Meta" title="Meta">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Meta</p>
                     <h4>Introduction to Android Mobile Application Development</h4>
                     <div class="cert-skills">
                         <span class="tech-badge">Gradle</span>
@@ -322,17 +432,42 @@
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788973585/3e46a64f-0023-4550-8149-8e675e54aebd.png" alt="Deep Teaching Solutions" title="Deep Teaching Solutions">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">Deep Teaching Solutions</p>
                     <h4>Learning How to Learn: Powerful Mental Tools to Help You Master Tough Subjects</h4>
-                    <p class="education-school" style="margin-bottom: 1rem;">Deep Teaching Solutions</p>
                     <a href="https://coursera.org/share/067324c1cf306753cd735166f485a576" target="_blank">View Credential</a>
                 </div>
                 <div class="cert-item">
                     <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788973776/1305cef5-8c1e-4791-a9e3-6670e93b70a0.png" alt="University of California, Irvine" title="University of California, Irvine">
-                    <i class="fas fa-certificate"></i>
+                    <p class="cert-publisher">University of California, Irvine</p>
                     <h4>Effective Problem-Solving and Decision-Making</h4>
-                    <p class="education-school" style="margin-bottom: 1rem;">University of California, Irvine</p>
+                    <div class="cert-skills">
+                        <span class="tech-badge">Organizational Strategy</span>
+                        <span class="tech-badge">Team Collaboration</span>
+                        <span class="tech-badge">Performance Metrics</span>
+                        <span class="tech-badge">Creative Thinking</span>
+                        <span class="tech-badge">Open Mindset</span>
+                        <span class="tech-badge">Performance Measurement</span>
+                        <span class="tech-badge">Teamwork</span>
+                    </div>
                     <a href="https://coursera.org/share/cc78021acb77cd5c3b5f52c1ca94f1da" target="_blank">View Credential</a>
+                </div>
+                <div class="cert-item">
+                    <img class="cert-provider-logo" src="https://res.cloudinary.com/deirc2clp/image/upload/v1788973776/1305cef5-8c1e-4791-a9e3-6670e93b70a0.png" alt="University of California, Irvine" title="University of California, Irvine">
+                    <p class="cert-publisher">University of California, Irvine</p>
+                    <h4>Work Smarter, Not Harder: Time Management for Personal &amp; Professional Productivity</h4>
+                    <div class="cert-skills">
+                        <span class="tech-badge">Overcoming Obstacles</span>
+                        <span class="tech-badge">Mental Concentration</span>
+                        <span class="tech-badge">Crisis Management</span>
+                        <span class="tech-badge">Planning</span>
+                        <span class="tech-badge">Professionalism</span>
+                        <span class="tech-badge">Calendar Management</span>
+                        <span class="tech-badge">Productivity Software</span>
+                        <span class="tech-badge">Scheduling</span>
+                        <span class="tech-badge">Time Management</span>
+                        <span class="tech-badge">Communication Strategies</span>
+                    </div>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/MVDOL16OCFOG" target="_blank">View Credential</a>
                 </div>
             </div>
         </div>
