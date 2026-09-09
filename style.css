@@ -453,12 +453,6 @@ a:hover {
     align-items: center;
 }
 
-.hero-image-wrap {
-    position: relative;
-    width: 300px;
-    height: 300px;
-}
-
 .profile-image {
     width: 300px;
     height: 300px;
@@ -478,53 +472,6 @@ a:hover {
     }
 }
 
-/* Tech-stack badges floating around the profile photo */
-.tech-icon-badge {
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background-color: var(--surface);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 8px 20px var(--shadow-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    animation: badge-float 4s ease-in-out infinite;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.tech-icon-badge img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.tech-icon-badge:hover {
-    transform: scale(1.15) !important;
-    border-color: var(--primary-color);
-    box-shadow: 0 12px 28px rgba(127, 82, 255, 0.35);
-    z-index: 5;
-}
-
-.tech-icon-1 { top: -10px;    left: 50%;   margin-left: -26px; animation-delay: 0s; }
-.tech-icon-2 { top: 18%;      right: -18px; animation-delay: 0.5s; }
-.tech-icon-3 { top: 55%;      right: -30px; animation-delay: 1s; }
-.tech-icon-4 { bottom: -14px; left: 50%;   margin-left: -26px; animation-delay: 1.5s; }
-.tech-icon-5 { top: 55%;      left: -30px; animation-delay: 2s; }
-.tech-icon-6 { top: 18%;      left: -18px; animation-delay: 2.5s; }
-.tech-icon-7 { top: -18px;    right: 8%;   animation-delay: 3s; }
-
-@keyframes badge-float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
 @media (max-width: 768px) {
     .hero {
         padding: 60px 0;
@@ -538,29 +485,10 @@ a:hover {
         order: -1;
     }
 
-    .hero-image-wrap {
-        width: 200px;
-        height: 200px;
-    }
-
     .profile-image {
         width: 200px;
         height: 200px;
     }
-
-    .tech-icon-badge {
-        width: 38px;
-        height: 38px;
-        padding: 6px;
-    }
-
-    .tech-icon-1 { top: -6px;   margin-left: -19px; }
-    .tech-icon-2 { top: 14%;    right: -10px; }
-    .tech-icon-3 { top: 55%;    right: -18px; }
-    .tech-icon-4 { bottom: -8px; margin-left: -19px; }
-    .tech-icon-5 { top: 55%;    left: -18px; }
-    .tech-icon-6 { top: 14%;    left: -10px; }
-    .tech-icon-7 { top: -10px;  right: 4%; }
 
     .tech-strip-icon {
         width: 32px;
